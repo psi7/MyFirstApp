@@ -1,0 +1,10 @@
+{% extends "tasks/layout.html" %}
+{% load static %}
+{%block body%}
+    <p>This is an add page</p>
+    <form action="{% url 'tasks:add'%}" method= 'post'>
+        {% csrf_token %}
+        {{form}}
+        <input type="submit">
+    </form>
+{% endblock %}

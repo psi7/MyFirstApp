@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends "tasks/layout.html" %} ## inherits the templates from the layout.html
+{% load static %}
+{%block body%}
+        <p>Hello {{name}} </p>
+        <ul>
+            {% for task in tasks %}
+            <li>{{task}}</li>
+            {% endfor %}
+        </ul>
+        <a href={% url 'tasks:add' %}>Add Task</a>
+{% endblock %}
